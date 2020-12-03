@@ -33,7 +33,7 @@ const converter = async (entrada, saida) => {
 //request 100 pages at the same time. 
 //retry 3 times after fetch error.
 //sleep 300ms before performing the next task
-var superWorker = new SuperWorker(converter, 16, 3, 300);
+var superWorker = new SuperWorker(converter, process.env.CONCORRENTES, 3, 300);
 //rename addJob
 superWorker.converter = superWorker.addJob;
  
